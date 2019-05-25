@@ -38,14 +38,14 @@ class Owner
   end
 
   def buy_fish(name)
-    fish = Fish.new(name)
-    @pets.map do |key, value|
-      if key == :fishes
-        value << fish
+    fish = Fish.new(name) #create new fish
+    @pets.map do |key, value| #iterate through hash to find fish key
+      if key == :fishes #once found
+        value << fish #add fish to the value
       end
     end
   end
-
+#repeat above for cats & dogs
   def buy_cat(name)
     cat = Cat.new(name)
     @pets.map do |key, value|
@@ -65,7 +65,7 @@ class Owner
   end
 
   def walk_dogs
-    @pets[:dogs][0].mood = "happy"
+    @pets[:dogs][0].mood = "happy" #find the value within the key and change mood to happy
   end
 
   def play_with_cats
@@ -77,14 +77,15 @@ class Owner
   end
 
   def sell_pets
-    @pets.each do |type, pet|
-      pet.each do |name|
-        if name.mood == "happy"
-          name.mood = "nervous"
+    @pets.each do |type, pet| #iterate through hash
+      pet.each do |name| #find array of names of pet instances
+        if name.mood == "happy" #if pet's mood was happy 
+          name.mood = "nervous" #change to nervous
         end
       end
     end
-      @pets.map {|type, pet| pet.clear}
+      @pets.map {|type, pet| pet.clear} 
+      #iterate through hash, find pet arrays, and clear 
   end
 
   def list_pets
