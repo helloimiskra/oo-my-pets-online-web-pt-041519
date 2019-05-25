@@ -86,19 +86,9 @@ class Owner
     end
       @pets.map {|type, pet| pet.clear}
   end
-    # @pets.map do |type, pet|
-    #   if type == :dogs
-    #     Dog.mood = "nervous"
-    #   elsif type == :cats
-    #     Cat.mood == "nervous"
-    #   elsif type == :fishes
-    #     Fish.mood == "nervous"
-    #   else
-    #     pet
-    #   end
-
 
   def list_pets
+    dog_count = @pets[:dogs].count
 
   end
 
