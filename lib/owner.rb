@@ -79,13 +79,13 @@ class Owner
   def sell_pets
     @pets.each do |type, pet| #iterate through hash
       pet.each do |name| #find array of names of pet instances
-        if name.mood == "happy" #if pet's mood was happy 
+        if name.mood == "happy" #if pet's mood was happy
           name.mood = "nervous" #change to nervous
         end
       end
     end
-      @pets.map {|type, pet| pet.clear} 
-      #iterate through hash, find pet arrays, and clear 
+      @pets.map {|type, pet| pet.clear}
+      #iterate through hash, find pet arrays, and clear
   end
 
   def list_pets
